@@ -1,0 +1,1456 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="细粒度问题(表面缺陷检测问题)总结及其相关项目, zhen666wua">
+    <meta name="description" content="zhen666wua">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>细粒度问题(表面缺陷检测问题)总结及其相关项目 | zhen666wua</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">zhen666wua</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/autoheavy" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>自动降重工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">zhen666wua</div>
+        <div class="logo-desc">
+            
+            zhen666wua
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/autoheavy" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			自动降重工具
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhen666wuawua" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Star Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhen666wuawua" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Star Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">细粒度问题(表面缺陷检测问题)总结及其相关项目</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">
+                                <span class="chip bg-color">机器视觉</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">开源数据库</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">
+                                <span class="chip bg-color">开源项目</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" class="post-category">
+                                机器视觉
+                            </a>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                开源数据库
+                            </a>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                开源项目
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-21
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>细粒度问题（表面缺陷检测问题）总结及其相关项目</strong></p>
+<p>一、<strong>什么是细粒度问题</strong></p>
+<p>图像分类是计算机视觉领域的一个经典问题，其目标是将不同的图像划分到不同的类别。而细粒度分类，则是在已经分出基本类别的基础上，进行更加精细的子类划分。相比通用图像（general&#x2F;generic images）的区别和难点在于其图像所属类别的粒度更为精细。以下图为例，通用图像分类任务是将“袋鼠”和“狗”这两个物体大类分开（蓝色框和红色框区分），而细粒度问题则要求对“狗”类别下的子类分开，即分别是“哈士奇”和“爱斯基摩犬”，这就是为了区分同类别物种的不同子类在耳朵形状、毛色等细微处的差异。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1527.tmp.png"></p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1538.tmp.jpg"></p>
+<p>二、<strong>细粒度（表面缺陷）问题的关键问题</strong></p>
+<p><strong>2.1 小样本问题</strong></p>
+<p>目前深度学习方法广泛应用在各种计算机视觉任务中, 表面缺陷检测一般被看作是其在工业领域的具体应用。在传统的认识中, 深度学习方法无法直接应用在表面缺陷检测中的原因是因为在真实的 工业环境中, 所能提供的工业缺陷样本太少。</p>
+<p>相比于ImageNet数据集中1400多万张样本数据, 表面缺陷检测中面临的最关键的问题是小样本问题, 在很多真实的工业场景下甚至只有几张或几十张缺陷图片。</p>
+<p>针对工业表面缺陷检测的小样本问题，目前有4种不同的解决方式：</p>
+<p>1）数据扩增、生成</p>
+<p>最常用的缺陷图像扩增方法是对原始缺陷样本采用镜像、旋转、平移、扭曲、滤波、对比度调整等多种图像处理操作来获取更多的样本。另外一种较为常见方法是数据合成, 常常将单独缺陷融合叠加到正常(无缺陷)样本上构成缺陷样本。</p>
+<p>2）网络预训练与迁移学习</p>
+<p>一般来说,，采用小样本来训练深度学习网络很容易导致过拟合, 因此基于预训练网络或迁移学习的方法是目前针对样本中最常用的方法之一。</p>
+<p>3）合理的网络结构设计</p>
+<p>通过设计合理的网络 结构也可以大大减少样本的需求。基于压缩采样定理来压缩和扩充小样本数据, 使用CNN直接对压缩采样的数据特征进行分类. 相比于原始的图像输入, 通过对输入进行压缩采样能大 大降低网络对样本的需求. 此外, 基于孪生网络的表 面缺陷检测方法也可以看作是一种特殊的网络设计, 能够大幅减少样本需求。</p>
+<p>4）无监督或半监督</p>
+<p>在无监督模型中, 只利用正常样本进行训练, 因此不需要缺陷样本. 半监督方法可以利用没有标注的样本来解决小样本情况下的网络训练难题。</p>
+<p><strong>2.2 实时性问题</strong></p>
+<p>基于深度学习的缺陷检测方法在工业应用中包括三个主要环节: 数据标注、模型训练与模型推断. 在实际工业应用中的实时性更关注模型推断这一环节. 目前大多数缺陷检测方法都集中在分类或 识别的准确性上, 而很少关注模型推断的效率。有不少方法用于加速模型, 例如模型权重量化和模型剪枝等。另外，虽然现有深度学习模型 使用GPU作为通用计算单元, 但随着技术发展, 相信FPGA会成为一个具有吸引力的替代方案。</p>
+<p>三、<strong>细粒度问题的典型算法</strong></p>
+<p><strong>3.1 基于强监督的分类方法</strong></p>
+<p><strong>3.1.1 Part-based R-CNN</strong></p>
+<p>Part-based R-CNN就是利用R-CNN算法对细粒度图像进行物体级别 (如各类鸟)与其局部区域 (头、身体等部位) 的检测。</p>
+<p>Part-based R-CNN的实现步骤如下：1. Part-based R-CNN基于R-CNN算法提取区域信息。2. 利用位置几何约束条件对R-CNN提取到的区域信息进行修正。3. 提取卷积特征，连接不同区域的特征作为最后的特征表示。4. 用SVM分类器进行分类训练。</p>
+<p>因为Part-based R-CNN在分类过程中既使用了物体级别特征，又使用了局部特征（即头部特征，躯干特征），所以分类精度比较理想，在CUB200-2011数据集上取得了73.9%的精度。但该方法不仅在训练时需要借助标注框和局部标注，在测试时还要求提供测试图像的标注框。这限制了Part-based R-CNN在实际场景中的应用。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1539.tmp.jpg"></p>
+<p>论文：Part-based R-CNNs for fine-grained category detection.</p>
+<p>代码实现参考：<a target="_blank" rel="noopener" href="https://github.com/n-zhang/part-based-RCNN">https://github.com/n-zhang/part-based-RCNN</a></p>
+<p><strong>3.1.2 Pose-normalized CNN</strong></p>
+<p>该方法基于Part-based R-CNN做了以下两点改进，一是Pose Normalized CNN对部位级别图像块做了姿态对齐操作 (Pose-normalization)。二是针对细粒度图像不同级别的图像块，提取不同层的卷积特征，进而可以更好利用CNN中具有不同的表示特性的不同层特征 (如浅层特征表示边缘等信息，深层特征表示高层语义)。该方法在CUB200-2011数据集上取得了75.7%的精度，比Part-based R-CNN高了约2%。但是该方法依然没有解决训练和测试都需要标注框和局部标注的问题，且检测速度较慢，因此实际应用并不广泛。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps153A.tmp.jpg"></p>
+<p><strong>3.1.3 Mask-CNN</strong></p>
+<p>该模型分为两个模块，第一是部分定位(Part Localization)，第二是全局和局部图像块的特征学习。与前两个方法的不同在于，该方法提出借助全卷积神经网络 (Fully Connected Network, FCN)学习一个部分分割模型 (Part-based Segmentation Model)。在FCN的训练中，部分定位这一问题就转化为一个三分类分割问题，分别为头部、躯干和背景。在此，我们称预测得到的部分分割结果为部分掩模 (Part Mask)。两个部分掩模组成一个较完整的物体掩模 (Object Mask)。另外，文章首次提出卷积特征描述子 (Convolutional Deor)。特征描述子的好处在于，利用部分掩模和部分掩模保留表示前景的描述子，而去除表示背景的卷积描述子的干扰。筛选后，对保留下来的特征描述子进行全局平均和最大池化操作，将三个子网特征级联作为整张图像的特征表示。</p>
+<p>该法仅依靠训练时提供的关键点标注(不需要标注框信息，且测试时不需额外标注信息)，取得了当时细粒度图像分类的最高分类精度87.3%。该方法的优点在于最先对特征进行选择，利用了更少的特征维数；同时丢弃了全连接层，提高了网络的计算效率。但是，该方法对于一些复杂背景图像部分定位结果还有待提高，同时该方法依然需要标注信息进行训练。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps153B.tmp.jpg"></p>
+<p>论文：Mask-CNN: Localizing parts and selecting deors for fine-grained bird species categorization.</p>
+<p>代码实现参考：<a target="_blank" rel="noopener" href="http://www.weixiushen.com/project/MaskCNN/MaskCNN.htm">http://www.weixiushen.com/project/MaskCNN/MaskCNN.htm</a></p>
+<p><strong>3.2 基于弱监督的分类方法</strong></p>
+<p>尽管强监督细粒度分类方法取得不错的分类精度，但缺点在于需要昂贵的人工标注，同时人工标注的位置也比较主观，很可能不是最佳区分的位置。因此人们希望在模型训练的时候仅使用图像级别标注信息。也能够取得与强监督分类模型可比的分类精度，因此，基于弱监督信息的细粒度分类模型被提出，利用注意力机制、聚类等手段让模型自动发现区别性区域。仅使用分类标签即可完成训练。</p>
+<p><strong>3.2.1 递归注意力卷积神经网络（RA-CNN）</strong></p>
+<p>注意力机制首先被使用于自然语言处理的模型中，其本质想法是希望网络能够“注意到”对分类更有利的区域。在细粒度图像分类问题中最经典的注意力模型为递归注意力卷积神经网络 (Recurrent Attention CNN, RA-CNN)，该方法在CUB200-2011数据集上取得了85.3%的精度。</p>
+<p>该方法不需要人工标记的边界框信息，可以实现对分类区域的注意力。原论文中的主体由三个不同尺度的分类子网络递归级联而成。不同尺度的分类子网络由注意力提议网络(Attention Proposal Network, APN) 进行耦合连接。具体而言，APN的输出是注意力区域的中心坐标和注意力区域的边长，利用APN 网络的输出对上一尺度的分类子网络的输入进行“裁剪”得到下一个尺度分类子网络的输入。RA-CNN网络的损失函数由两部分组成，一部分是每个尺度下分类子网络的分类损失，另一部分是尺度间的排序损失。排序损失的目的是希望下一尺度的分类精度比上一尺度更高，由此来驱动注意力区域的优化。由于 RA-CNN 是一个单注意力的网络，后面有学者将其拓展到多注意力的卷积神经网络 (Multi Attention CNN, MA-CNN) 。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps154B.tmp.jpg"></p>
+<p>论文：Look closer to see better: Recurrent attention convolutional neural network for fine-grained image recognition.</p>
+<p>代码实现参考：<a target="_blank" rel="noopener" href="https://github.com/Jianlong-Fu/Recurrent-Attention-CNN">https://github.com/Jianlong-Fu/Recurrent-Attention-CNN</a></p>
+<p><strong>3.2.2 双线性模型 (Bilinear CNN model, BCNN)</strong></p>
+<p>BCNN的设计直觉是根据大脑工作时同时认知类别和关注关键特征的方式，构建了两个线性网络，两者相互协调完成局部特征提取和分类的任务。具体而言，BCNN 模型首先使用两个卷积神经网络作为特征提取器，然后对特征进行双线性池化，再连接到输出。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps154C.tmp.jpg"></p>
+<p>该算法在CUB200-2011数据集上取得了84.1%的精度。该方法的优点在于，通过外积实现的双线性池化能够考虑不同特征的交互信息，可能对分类有帮助。缺点在于预训练的卷积神经网络得到特征维度通常很高，这使得双线性池化后的特征维度极高。后续有一系列算法考虑对双线性池化特征进行降维，如紧致双线性池化 (Compact Bilinear Pooling) ，低秩双线性池化 (Low Rank Bilinear Pooling) 等。</p>
+<p>论文：Bilinear CNN Models for Fine-grained Visual Recognition.</p>
+<p>代码实现参考：<a target="_blank" rel="noopener" href="https://github.com/chencodeX/Bilinear_CNN_dog_classifi">https://github.com/chencodeX/Bilinear_CNN_dog_classifi</a></p>
+<p>四、<strong>细粒度问题的常用数据集</strong></p>
+<p>l CUB200-2011：该数据集由加州理工学院提出，是目前细粒度分类识别研究的基准图像数据集。该数据库提供了11,788张图片，包括200种不同类别的鸟类图像数据。其中每张图像包含15个局部部位标注点、312个二值属性、1个标注框和语义分割图像。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html">http://www.vision.caltech.edu/visipedia/CUB-200-2011.html</a></p>
+<p>l Stanford Dogs: 该数据库是斯坦福系列的经典数据集，包含120种不同类别的狗的图像数据, 共有20,580 张图, 包括类别标签和标注框信息。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="http://vision.stanford.edu/aditya86/ImageNetDogs/">http://vision.stanford.edu/aditya86/ImageNetDogs/</a></p>
+<p>l Stanford Cars: 该数据库是斯坦福系列的经典数据集，提供了196类不同品牌、不同年份、不同车型的车辆图像数据, 一共包含有16,185张图像, 提供标注框信息和类别标签。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="http://ai.stanford.edu/~jkrause/cars/car_dataset.html">http://ai.stanford.edu/~jkrause&#x2F;cars&#x2F;car_dataset.html</a></p>
+<p>l Oxford Flowers: 该数据库有包含17种类别和102种类别的花两种不同规模的数据库。其中，102种类别的数据库比较常用，共有8,189张图像。该数据库提供语义分割图像和类别标签。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~vgg/data/flowers/">https://www.robots.ox.ac.uk/~vgg&#x2F;data&#x2F;flowers&#x2F;</a></p>
+<p>l FGVC-Aircraft: 该数据库提供102类不同的飞机照片，每一类别含有100 张不同的照片，整个数据库共有10,200张图片，提供类别标签和标注框信息。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="http://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/">http://www.robots.ox.ac.uk/~vgg&#x2F;data&#x2F;fgvc-aircraft&#x2F;</a></p>
+<p>五、<strong>表面缺陷检测问题的常用数据集</strong></p>
+<p><strong>5.1 钢材表面：NEU-CLS（可用于分类、定位任务）</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：</p>
+<p>百度网盘链接：<a href="https://link.zhihu.com/?target=https:/pan.baidu.com/s/1bAKoSG7VHE98JdHJPGJvcw">https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1bAKoSG7VHE98JdHJPGJvcw</a></p>
+<p>提取码：ibje</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps154D.tmp.png"></p>
+<p>由东北大学（NEU）发布的表面缺陷数据库，收集了热轧钢带的六种典型表面缺陷，即轧制氧化皮（RS），斑块（Pa），开裂（Cr），点蚀表面（ PS），内含物（In）和划痕（Sc）。该数据库包括1,800个灰度图像：六种不同类型的典型表面缺陷，每一类缺陷包含300个样本。对于缺陷检测任务，数据集提供了注释，指示每个图像中缺陷的类别和位置。对于每个缺陷，黄色框是指示其位置的边框，绿色标签是类别分数。</p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p><strong>5.2 太阳能板 elpv&#x3D;dataset （做颜色分类的时候或许可以用）</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://github.com/zae-bayern/elpv-dataset">https://github.com/zae-bayern/elpv-dataset</a></p>
+<p>包含2624个300pixel*300pixel的8比特灰度图像，来自44个不同的太阳能模块。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps155E.tmp.png"></p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p><strong>5.3 金属表面 KolektorSDD</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://www.vicos.si/resources/kolektorsdd/">https://www.vicos.si/resources/kolektorsdd/</a></p>
+<p>包含399张图像，52张包含可视缺陷，347张无缺陷。</p>
+<p>原始图像大小：宽度：500像素，高度：1240像素到1270像素。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps155F.tmp.png"></p>
+<p>代码实现参考：有</p>
+<p>代码地址：<a target="_blank" rel="noopener" href="https://github.com/ShuaiLYU/Deep-Learning-Approach-for-Surface-Defect-Detection">https://github.com/ShuaiLYU/Deep-Learning-Approach-for-Surface-Defect-Detection</a></p>
+<p><strong>5.4 PCB板检测：DeepPCB （感觉暂时用不到，需要对比）</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://github.com/tangsanli5201/DeepPCB">https://github.com/tangsanli5201/DeepPCB</a></p>
+<p>包含1500张图片，每个图像对包含一个无缺陷的模板图像和一个对齐的测试图像，带有标注，包括6种最常见的PCB缺陷类型的位置：开、短、鼠咬、马刺、针孔和伪洞。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1560.tmp.png"></p>
+<p>代码实现参考：有</p>
+<p>代码地址：<a target="_blank" rel="noopener" href="https://github.com/tangsanli5201/DeepPCB">https://github.com/tangsanli5201/DeepPCB</a></p>
+<p><strong>5.5 AITEX数据集（面料缺陷）</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1pm-h4jGtIVfiosPwXOUkKA">https://pan.baidu.com/s/1pm-h4jGtIVfiosPwXOUkKA</a></p>
+<p>提取码：vgp0</p>
+<p>由七个不同织物结构的245张4096*256像素的图像组成，数据库中有140个无缺陷图像，每种类型的织物有20个，除此之外，有105幅纺织业中常见的不同类型的织物缺陷（12种缺陷）图像。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1570.tmp.jpg"></p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p><strong>5.6 天池布匹缺陷数据</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：</p>
+<p><a target="_blank" rel="noopener" href="https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.6a9364485r3fFj&dataId=79336">https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.6a9364485r3fFj&dataId=79336</a></p>
+<p>或：链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1wSddhzdfBp8kZcp8nIkzpg">https://pan.baidu.com/s/1wSddhzdfBp8kZcp8nIkzpg</a></p>
+<p>提取码：hk5d</p>
+<p>每张图片含一个或多种瑕疵，数据包含素色布和花色布两类，其中素色布数据约8000张，用于初赛；花色布数据约12000张，用于复赛。</p>
+<p>代码实现参考：有</p>
+<p>代码地址：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/zhengye1995/Tianchi-2019-Guangdong-Intelligent-identification-of-cloth-defects-rank5">https://github.com/zhengye1995/Tianchi-2019-Guangdong-Intelligent-identification-of-cloth-defects-rank5</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/chuliuT/Tianchi_Fabric_defects_detection">https://github.com/chuliuT/Tianchi_Fabric_defects_detection</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/maozezhong/TIANCHI_XUELANG_AI_2">https://github.com/maozezhong/TIANCHI_XUELANG_AI_2</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/maozezhong/TIANCHI_XUELANG_AI">https://github.com/maozezhong/TIANCHI_XUELANG_AI</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Vipermdl/Faster-Rcnn_Tianchi_Guangdong.pytorch">https://github.com/Vipermdl/Faster-Rcnn_Tianchi_Guangdong.pytorch</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/likunlun0618/fabric_defects_detection">https://github.com/likunlun0618/fabric_defects_detection</a></p>
+<p><strong>5.7 天池铝型材表面瑕疵数据集</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1uUs-PmUcxeQ7qX_W-ohzMg">https://pan.baidu.com/s/1uUs-PmUcxeQ7qX_W-ohzMg</a></p>
+<p>提取码：oxhn</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1571.tmp.jpg"></p>
+<p>代码实现参考：有</p>
+<p>代码地址：</p>
+<p>未调参线上0.921 GitHub: <a target="_blank" rel="noopener" href="https://github.com/herbert-chen/tianchi_lvcai">https://github.com/herbert-chen/tianchi_lvcai</a></p>
+<p>线上0.943: <a target="_blank" rel="noopener" href="https://github.com/wangbinglin1995/tianchi">https://github.com/wangbinglin1995/tianchi</a></p>
+<p><strong>5.8 弱监督学习下的工业光学检测（DAGM 2007）</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://hci.iwr.uni-heidelberg.de/node/3616">https://hci.iwr.uni-heidelberg.de/node/3616</a> （需要申请）</p>
+<p>百度网盘链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=EyK3flXj2S9Uyooi10HsCA">https://pan.baidu.com/share/init?surl=EyK3flXj2S9Uyooi10HsCA</a></p>
+<p>提取码：j9qz</p>
+<p>主要针对纹理背景上的杂项缺陷；较弱监督的训练数据；包含10个数据集，前六个是训练数据集，后四个是测试数据集。</p>
+<p>每个数据集均包含以8位灰度PNG保存的1000个无缺陷图像和10个有缺陷图像，每个数据集由不同的纹理模型和缺陷模型生成。</p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p><strong>5.9 基建表面裂纹检测数据 Cracks on the surface of the construction （可以类比折皱）</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://github.com/cuilimeng/CrackForest-dataset">https://github.com/cuilimeng/CrackForest-dataset</a></p>
+<p>或者百度云链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1108j5QbDr7T3XQvDxAzVpg">https://pan.baidu.com/s/1108j5QbDr7T3XQvDxAzVpg</a> （提取码：jajn）下载。</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1572.tmp.jpg"></p>
+<p>桥梁裂缝：有2688张没有像素级地面真实情况的桥梁裂缝图像来自于”Liangfu Li, Weifei Ma, Li Li, Xiaoxiao Gao”. 数据集可通过此链接访问： <a target="_blank" rel="noopener" href="https://github.com/Charmve/Surface-Defect-Detection/tree/master/Bridge_Crack_Image.">https://github.com/Charmve/Surface-Defect-Detection/tree/master/Bridge_Crack_Image.</a></p>
+<p>路面裂缝：该数据集来自于Shi Yong, and Cui Limeng and Qi Zhiquan and Meng Fan and Chen Zhensong. 原始数据集可通过此链接访问 <a target="_blank" rel="noopener" href="https://github.com/Charmve/Surface-Defect-Detection/tree/master/CrackForest">https://github.com/Charmve/Surface-Defect-Detection/tree/master/CrackForest</a>. 我们提取像素级地面真相的图像文件。</p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p><strong>5.10 磁瓦缺陷数据集 Magnetic tile dataset</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://github.com/Charmve/Surface-Defect-Detection/tree/master/Magnetic-Tile-Defect">https://github.com/Charmve/Surface-Defect-Detection/tree/master/Magnetic-Tile-Defect</a></p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1583.tmp.jpg"></p>
+<p>收集了6个常见磁砖缺陷的图像，并标记了它们的像素级地面真相。</p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p>参考文献：<a target="_blank" rel="noopener" href="https://link.springer.com/article/10.1007/s00371-018-1588-5">https://link.springer.com/article/10.1007/s00371-018-1588-5</a></p>
+<p><strong>5.11 铁轨表面缺陷数据集</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/share/init?surl=svsnqL0r1kasVDNjppkEwg">https://pan.baidu.com/share/init?surl=svsnqL0r1kasVDNjppkEwg</a></p>
+<p>（提取码：nanr）</p>
+<p><img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1584.tmp.jpg"></p>
+<p>RSDDs数据集包含两种类型的数据集：第一种是从快车道补货的1型RSDDs数据集，其中包含67个图像；第二个是从普通&#x2F;重型运输轨道补货的2型RSDDs数据集，其中包含128个图像。</p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p><strong>5.12 Kylberg纹理数据集 v.1.0</strong></p>
+<p>数据库：有</p>
+<p>数据库基本信息：<a target="_blank" rel="noopener" href="https://www.cb.uu.se/~gustaf/texture/">https://www.cb.uu.se/~gustaf&#x2F;texture&#x2F;</a></p>
+<p>28个纹理类；每个分类下有160个独特的纹理补丁（每个原始补丁有12个旋转的替代数据集，每个类160 * 12 &#x3D; 1920个纹理补丁）；纹理补丁大小：576x576像素。</p>
+<p>文件格式：无损压缩8位PNG。</p>
+<p>所有补丁均以127的平均值和40的标准偏差进行标准化。</p>
+<p>每个纹理类一个目录。</p>
+<p>文件的命名如下：blanket1-d-p011-r180.png，其中blanket1是类名，d是原始图像样本编号（可能的值是a，b，c或d），p011是补丁编号11，r180补丁旋转了180度。<img src="file:///C:\Users\bitli\AppData\Local\Temp\ksohtml\wps1585.tmp.jpg"></p>
+<p>代码实现参考：无</p>
+<p>代码地址：无</p>
+<p>六、<strong>表面缺陷检测相关项目</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/sundyCoder/DEye">https://github.com/sundyCoder/DEye</a></p>
+<p>可以探索一下，Defect Eye是一个基于tensorflow1.4的开源软件库，专注于表面缺陷检测。应用领域涵盖制造环境中的所有良率应用，包括进入来料加工工具认证，晶圆认证，玻璃表面认证，光罩鉴定，研究和开发以及工具，工艺和生产线监控。图案化和未图案化的晶圆缺陷检查和鉴定工具在晶圆的前表面，后表面和边缘上发现颗粒和图案缺陷，使工程师能够检测和监控关键的屈服偏移。此外，它可用于医学图像的注射，包括肺PET &#x2F; CT，乳房MRI，CT Colongraphy，数字胸部X射线图像。</p>
+<p>七、<strong>细粒度问题未来发展的方向</strong></p>
+<p>5.1 细粒度少样本学习</p>
+<p>5.2 应用于实际场景</p>
+<p>5.3 自动细粒度模型</p>
+<p>参考文献：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/371208491">https://zhuanlan.zhihu.com/p/371208491</a></p>
+<p>细粒度问题相关资源：</p>
+<p><a target="_blank" rel="noopener" href="http://www.weixiushen.com/project/Awesome_FGIA/Awesome_FGIA.html">http://www.weixiushen.com/project/Awesome_FGIA&#x2F;Awesome_FGIA.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.weixiushen.com/tutorial/PRICAI18/FGIA.html">http://www.weixiushen.com/tutorial/PRICAI18/FGIA.html</a></p>
+<p>经典表面缺陷文献：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Charmve/Surface-Defect-Detection/tree/master/Papers">https://github.com/Charmve/Surface-Defect-Detection/tree/master/Papers</a></p>
+<p>数据库资源：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27871973/article/details/84974231">https://blog.csdn.net/qq_27871973&#x2F;article&#x2F;details&#x2F;84974231</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/195699093?utm_source=zhihu">https://zhuanlan.zhihu.com/p/195699093?utm_source&#x3D;zhihu</a></p>
+<p><a target="_blank" rel="noopener" href="https://jishuin.proginn.com/p/763bfbd72ccf">https://jishuin.proginn.com/p/763bfbd72ccf</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhen666wua</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhen666wuawua.github.io/2022/04/21/%E7%BB%86%E7%B2%92%E5%BA%A6%E9%97%AE%E9%A2%98(%E8%A1%A8%E9%9D%A2%E7%BC%BA%E9%99%B7%E6%A3%80%E6%B5%8B%E9%97%AE%E9%A2%98)%E6%80%BB%E7%BB%93%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/">https://zhen666wuawua.github.io/2022/04/21/%E7%BB%86%E7%B2%92%E5%BA%A6%E9%97%AE%E9%A2%98(%E8%A1%A8%E9%9D%A2%E7%BC%BA%E9%99%B7%E6%A3%80%E6%B5%8B%E9%97%AE%E9%A2%98)%E6%80%BB%E7%BB%93%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhen666wua</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">
+                                    <span class="chip bg-color">机器视觉</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">开源数据库</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">
+                                    <span class="chip bg-color">开源项目</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的鼓励是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/04/21/%E7%BB%86%E7%B2%92%E5%BA%A6%E9%97%AE%E9%A2%98(%E8%A1%A8%E9%9D%A2%E7%BC%BA%E9%99%B7%E6%A3%80%E6%B5%8B%E9%97%AE%E9%A2%98)%E6%80%BB%E7%BB%93%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="细粒度问题(表面缺陷检测问题)总结及其相关项目">
+                        
+                        <span class="card-title">细粒度问题(表面缺陷检测问题)总结及其相关项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" class="post-category">
+                                    机器视觉
+                                </a>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    开源数据库
+                                </a>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    开源项目
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">
+                        <span class="chip bg-color">机器视觉</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">开源数据库</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">开源项目</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/19/HTML%E5%9F%BA%E7%A1%80/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="HTML基础">
+                        
+                        <span class="card-title">HTML基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zhen666wua
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zhen666wua<br />'
+            + '文章作者: zhen666wua<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">zhen666wua</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhen666wuawua" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:18810671399@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1142840239" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1142840239" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/medias/logo.png" class="tooltipped" target="_blank" data-tooltip="添加我的微信: 18810671399" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
