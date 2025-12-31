@@ -489,18 +489,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装jupyter和pytorch用于开发"><a href="#安装jupyter和pytorch用于开发" class="headerlink" title="安装jupyter和pytorch用于开发"></a>安装jupyter和pytorch用于开发</h1><h2 id="直接安装jupyter-不使用Anaconda"><a href="#直接安装jupyter-不使用Anaconda" class="headerlink" title="直接安装jupyter(不使用Anaconda)"></a>直接安装jupyter(不使用Anaconda)</h2><p><strong>win+R</strong>打开终端，在终端中通过pip直接安装jupyter。<br><img src="../../images/machinelearning/cmd.png#pic_center" alt="cmd"></p>
+                <h1 id="安装jupyter和pytorch用于开发"><a href="#安装jupyter和pytorch用于开发" class="headerlink" title="安装jupyter和pytorch用于开发"></a>安装jupyter和pytorch用于开发</h1><h2 id="直接安装jupyter-不使用Anaconda"><a href="#直接安装jupyter-不使用Anaconda" class="headerlink" title="直接安装jupyter(不使用Anaconda)"></a>直接安装jupyter(不使用Anaconda)</h2><p><strong>win+R</strong>打开终端，在终端中通过pip直接安装jupyter。<br><img src="/images/machinelearning/cmd.png#pic_center" alt="cmd"></p>
 <pre class="language-python" data-language="python"><code class="language-python">pip install jupyter</code></pre>
 
-<p><img src="../../images/machinelearning/jupyter.png#pic_center" alt="jupyter"></p>
-<p>安装成功后，通过<code>jupyter notebook</code>即可直接打开jupyter notebook的界面直接使用。<br><img src="../../images/machinelearning/jupyternotebook.png#pic_center" alt="jupyter"></p>
-<h2 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h2><p>首先查看电脑的CUDA版本：<strong>win+R</strong>打开终端，在终端中输入<code>nvidia-smi</code>。右上角可以查看CUDA版本。<br><img src="../../images/machinelearning/cuda.png#pic_center" alt="cuda"><br>然后进入pytorch官网：<a target="_blank" rel="noopener" href="https://pytorch.org/">PyTorch</a><br><img src="../../images/machinelearning/pytorch.png#pic_center" alt="pytorch"><br>根据电脑的情况选择合适的安装命令。<br>然后在项目创建的虚拟环境的终端中运行安装代码，等待安装即可。<br><img src="../../images/machinelearning/install.png#pic_center" alt="pytorch"><br>安装成功后，进行测试。<br>测试代码段：</p>
+<p><img src="/images/machinelearning/jupyter.png#pic_center" alt="jupyter"></p>
+<p>安装成功后，通过<code>jupyter notebook</code>即可直接打开jupyter notebook的界面直接使用。<br><img src="/images/machinelearning/jupyternotebook.png#pic_center" alt="jupyter"></p>
+<h2 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h2><p>首先查看电脑的CUDA版本：<strong>win+R</strong>打开终端，在终端中输入<code>nvidia-smi</code>。右上角可以查看CUDA版本。<br><img src="/images/machinelearning/cuda.png#pic_center" alt="cuda"><br>然后进入pytorch官网：<a target="_blank" rel="noopener" href="https://pytorch.org/">PyTorch</a><br><img src="/images/machinelearning/pytorch.png#pic_center" alt="pytorch"><br>根据电脑的情况选择合适的安装命令。<br>然后在项目创建的虚拟环境的终端中运行安装代码，等待安装即可。<br><img src="/images/machinelearning/install.png#pic_center" alt="pytorch"><br>安装成功后，进行测试。<br>测试代码段：</p>
 <pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 
-<p><img src="../../images/machinelearning/testtorch.png#pic_center" alt="pytorch"></p>
+<p><img src="/images/machinelearning/testtorch.png#pic_center" alt="pytorch"></p>
 <p>成功！</p>
 
                 
