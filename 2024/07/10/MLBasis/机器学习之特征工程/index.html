@@ -1,0 +1,1365 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="机器学习之特征工程, zhen666wua">
+    <meta name="description" content="zhen666wua">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>机器学习之特征工程 | zhen666wua</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">zhen666wua</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/AutoHeavy" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>自动降重工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">zhen666wua</div>
+        <div class="logo-desc">
+            
+            zhen666wua
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/AutoHeavy" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			自动降重工具
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhen666wuawua" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Star Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhen666wuawua" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Star Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">机器学习之特征工程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/machinelearning/">
+                                <span class="chip bg-color">machinelearning</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/machinelearning/" class="post-category">
+                                machinelearning
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-07-10
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、特征工程——概述"><a href="#一、特征工程——概述" class="headerlink" title="一、特征工程——概述"></a>一、特征工程——概述</h2><p>特征工程是数据分析中最耗时间和精力的一部分工作。数据和特征决定了机器学习的上限，而模型和算法则是逼近这个上限。因此，特征工程就变得尤为重要了。特征工程的主要工作就是对特征的处理，包括数据的采集，数据预处理，特征选择，甚至降维技术等跟特征有关的工作。</p>
+<h3 id="1、特征（Feature）"><a href="#1、特征（Feature）" class="headerlink" title="1、特征（Feature）"></a>1、特征（Feature）</h3><p>特征是数据中抽取出来的对结果预测有用的信息。</p>
+<h3 id="2、特征工程（Feature-Engineering）"><a href="#2、特征工程（Feature-Engineering）" class="headerlink" title="2、特征工程（Feature Engineering）"></a>2、特征工程（Feature Engineering）</h3><p>特征工程是使用专业背景知识和技巧处理数据，使得特征能在机器学习算法上发挥更好的作用的过程。</p>
+<h3 id="3、特征工程的意义"><a href="#3、特征工程的意义" class="headerlink" title="3、特征工程的意义"></a>3、特征工程的意义</h3><ol>
+<li>特征工程是将原始数据转化为特征，能更好表示预测模型处理的实际问题，提升对于未知数据预测的准确性。</li>
+<li>更好的特征意味着更强的灵活度、更好的特征意味着只需要用简单模型、更好的特征意味着更好的结果。</li>
+</ol>
+<h2 id="二、特征工程——数据预处理"><a href="#二、特征工程——数据预处理" class="headerlink" title="二、特征工程——数据预处理"></a>二、特征工程——数据预处理</h2><h3 id="1、缺失值处理"><a href="#1、缺失值处理" class="headerlink" title="1、缺失值处理"></a>1、缺失值处理</h3><ol>
+<li><strong>连续值：可以选择该特征值的所有样本的均值或中位数来填充缺失值。</strong></li>
+<li><strong>离散值：选择该特征值的所有样本中最频繁出现的类别值来填充缺失值。</strong><br>注：不可信的样本丢掉，缺省值极多的字段考虑不用（即删掉）</li>
+</ol>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> Imputer</code></pre>
+
+<h3 id="2、离散特征的连续化处理"><a href="#2、离散特征的连续化处理" class="headerlink" title="2、离散特征的连续化处理"></a>2、离散特征的连续化处理</h3><h4 id="（1）独热编码（one-hot-encoding）（哑变量）"><a href="#（1）独热编码（one-hot-encoding）（哑变量）" class="headerlink" title="（1）独热编码（one-hot encoding）（哑变量）"></a>（1）独热编码（one-hot encoding）（哑变量）</h4><p>处理方法比较简单，比如某特征的取值是高，中和低，那么我们就可以创建三个取值为0或者1的特征，将高编码为1,0,0，中编码为0,1,0，低编码为0,0,1。也就是说，之前的一个特征被我们转化为了三个特征。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> LabelEncoder
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> OneHotEncoder</code></pre>
+
+<h4 id="（2）特征嵌入（embedding）"><a href="#（2）特征嵌入（embedding）" class="headerlink" title="（2）特征嵌入（embedding）"></a>（2）特征嵌入（embedding）</h4><p>这个一般用于深度学习中。比如对于用户的ID这个特征，如果要使用独热编码，则维度会爆炸，如果使用特征嵌入维度就低很多了。对于每个要嵌入的特征，我们会有一个特征嵌入矩阵，这个矩阵的行很大，对应我们该特征的数目。比如用户ID，如果有100万个，那么嵌入的特征矩阵的行就是100万。但是列一般比较小，比如可以取20。这样每个用户ID就转化为了一个20维的特征向量，进而参与深度学习模型。</p>
+<h3 id="3、连续特征的离散化处理"><a href="#3、连续特征的离散化处理" class="headerlink" title="3、连续特征的离散化处理"></a>3、连续特征的离散化处理</h3><p>连续特征的离散化就是在数据的取值范围内设定若干个离散的划分点，将取值范围划分为一些离散化的区间，最后用不同的符号或整数值代表落在每个子区间中的数据值。<br>首先要确定分类数，然后将连续特征值映射到这些分类值（等宽法、等频法、一维聚类）。</p>
+<h4 id="（1）根据阈值进行分组"><a href="#（1）根据阈值进行分组" class="headerlink" title="（1）根据阈值进行分组"></a>（1）根据阈值进行分组</h4><p>比如我们根据连续值特征的分位数，将该特征分为高，中和低三个特征。将分位数从0~0.3的设置为低，0.3~0.7的设置为中，0.7~1的设置为高。</p>
+<h4 id="（2）基于聚类分析的方法"><a href="#（2）基于聚类分析的方法" class="headerlink" title="（2）基于聚类分析的方法"></a>（2）基于聚类分析的方法</h4><p>一维聚类的方法包括两个步骤，首先将连续特征的值用聚类算法（如K-Means算法）进行聚类，然后再将聚类得到的簇进行处理，合并到一个簇的连续特征值并做同一标记。聚类分析的离散化方法也需要用户指定簇的个数，从而决定产生的区间数。</p>
+<h4 id="（3）使用梯度提升树（GDBT）将连续值转化为离散值"><a href="#（3）使用梯度提升树（GDBT）将连续值转化为离散值" class="headerlink" title="（3）使用梯度提升树（GDBT）将连续值转化为离散值"></a>（3）使用梯度提升树（GDBT）将连续值转化为离散值</h4><p>在<strong>sklearn</strong>中，我们可以用<strong>GradientBoostingClassifier</strong>的 apply方法很方便的得到样本离散化后的特征，然后使用独热编码即可。</p>
+<h3 id="4、特征的标准化和归一化（数值型数据）"><a href="#4、特征的标准化和归一化（数值型数据）" class="headerlink" title="4、特征的标准化和归一化（数值型数据）"></a>4、特征的标准化和归一化（数值型数据）</h3><p>数据规范化处理是数据挖掘的一项基础工作。不同的评价指标往往具有不同的量纲，数值间的差别可能很大，不进行处理可能会影响到数据分析的结果。为了消除指标之间的量纲和取值范围差异的影响，需要进行标准化处理，将数据按照比例进行缩放，使之落入一个特定的区域，便于进行综合分析。</p>
+<h4 id="（1）零-均值标准化（Z-score）"><a href="#（1）零-均值标准化（Z-score）" class="headerlink" title="（1）零-均值标准化（Z-score）"></a>（1）零-均值标准化（Z-score）</h4><p>具体的方法是求出样本特征x的均值mean和标准差std，然后用<code>（x-mean)/std</code>来代替原特征。这样特征就变成了均值为0，方差为1。该方法是当前用的最多的数据标准化方法。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler</code></pre>
+
+<h4 id="（2）最小-最大标准化（min-max）"><a href="#（2）最小-最大标准化（min-max）" class="headerlink" title="（2）最小-最大标准化（min-max）"></a>（2）最小-最大标准化（min-max）</h4><p>最小 - 最大标准化也成为离差标准化，是对原始数据的线性变换，将数值映射到[0,1]之间。</p>
+<p>具体的方法是求出样本特征x的最大值max和最小值min，然后用<code>(x-min)/(max-min)</code>来代替原特征。如果我们希望将数据映射到任意一个区间[a,b]，而不是[0,1]，那么也很简单。用<code>(x-min)(b-a)/(max-min)+a</code>来代替原特征即可。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> MinMaxScaler</code></pre>
+
+<h4 id="（3）L1-L2范数标准化"><a href="#（3）L1-L2范数标准化" class="headerlink" title="（3）L1&#x2F;L2范数标准化"></a>（3）L1&#x2F;L2范数标准化</h4><pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> Normalizer</code></pre>
+
+<blockquote>
+<p>通常情况下，范数标准化首选L2范数标准化。</p>
+</blockquote>
+<h3 id="5、时间类型的数据处理"><a href="#5、时间类型的数据处理" class="headerlink" title="5、时间类型的数据处理"></a>5、时间类型的数据处理</h3><h4 id="（1）连续的时间差值法"><a href="#（1）连续的时间差值法" class="headerlink" title="（1）连续的时间差值法"></a>（1）连续的时间差值法</h4><p>即计算出所有样本的时间到某一个未来时间之间的数值差距，这样这个差距是UTC的时间差，从而将时间特征转化为连续值。</p>
+<h4 id="（2）将一个时间转化为离散特征"><a href="#（2）将一个时间转化为离散特征" class="headerlink" title="（2）将一个时间转化为离散特征"></a>（2）将一个时间转化为离散特征</h4><p>根据时间所在的年，月，日，星期几，小时数，将一个时间特征转化为若干个离散特征，这种方法在分析具有明显时间趋势的问题比较好用。</p>
+<h3 id="6、文本类型的数据预处理"><a href="#6、文本类型的数据预处理" class="headerlink" title="6、文本类型的数据预处理"></a>6、文本类型的数据预处理</h3><h4 id="（1）词袋"><a href="#（1）词袋" class="headerlink" title="（1）词袋"></a>（1）词袋</h4><p>直接把文本数据丢给模型，模型是无法解释的，因此需要把文本型的数据用数值表示。去掉停用词，标点符号，留下表达实际含义的词组成列表，在词库中映射稀疏向量。</p>
+<h4 id="（2）把词袋中的词扩充到n-gram"><a href="#（2）把词袋中的词扩充到n-gram" class="headerlink" title="（2）把词袋中的词扩充到n-gram"></a>（2）把词袋中的词扩充到n-gram</h4><p>它的思想是：在整个语言环境中，句子T的出现概率是由组成T的N个词组成的。</p>
+<h4 id="（3）使用TF-IDF方法"><a href="#（3）使用TF-IDF方法" class="headerlink" title="（3）使用TF-IDF方法"></a>（3）使用TF-IDF方法</h4><h4 id="（4）word2vec将词转化为词向量"><a href="#（4）word2vec将词转化为词向量" class="headerlink" title="（4）word2vec将词转化为词向量"></a>（4）word2vec将词转化为词向量</h4><h3 id="7、异常特征样本清洗"><a href="#7、异常特征样本清洗" class="headerlink" title="7、异常特征样本清洗"></a>7、异常特征样本清洗</h3><p>异常数据的清洗，目标是将原始数据中异常的数据清除。</p>
+<h4 id="（1）偏差检测（-聚类（KMeans）和最近邻（KNN））"><a href="#（1）偏差检测（-聚类（KMeans）和最近邻（KNN））" class="headerlink" title="（1）偏差检测（ 聚类（KMeans）和最近邻（KNN））"></a>（1）偏差检测（ 聚类（KMeans）和最近邻（KNN））</h4><p>比如我们可以用KMeans聚类将训练样本分成若干个簇，如果某一个簇里的样本数很少，而且簇质心和其他所有的簇都很远，那么这个簇里面的样本极有可能是异常特征样本了。我们可以将其从训练集过滤掉。</p>
+<h4 id="（2）异常点检测（iForest，one-class-SVM）"><a href="#（2）异常点检测（iForest，one-class-SVM）" class="headerlink" title="（2）异常点检测（iForest，one class SVM）"></a>（2）异常点检测（iForest，one class SVM）</h4><p>主要是使用<strong>iForest</strong>或者<strong>one class SVM</strong>，使用异常点检测的机器学习算法来过滤所有的异常点。</p>
+<h4 id="（3）基于统计的异常点检测"><a href="#（3）基于统计的异常点检测" class="headerlink" title="（3）基于统计的异常点检测"></a>（3）基于统计的异常点检测</h4><p>例如极差，四分位数间距，均差，标准差等，这种方法适合于挖掘单变量的数值型数据。全距(Range)，又称极差，是用来表示统计资料中的变异量数(measures of variation) ，其最大值与最小值之间的差距；四分位距通常是用来构建箱形图，以及对概率分布的简要图表概述。</p>
+<h4 id="（4）基于距离的异常点检测"><a href="#（4）基于距离的异常点检测" class="headerlink" title="（4）基于距离的异常点检测"></a>（4）基于距离的异常点检测</h4><p>主要通过距离方法来检测异常点，将数据集中与大多数点之间距离大于某个阈值的点视为异常点，主要使用的距离度量方法有绝对距离 ( 曼哈顿距离 ) 、欧氏距离和马氏距离等方法。</p>
+<h4 id="（5）基于密度的异常点检测"><a href="#（5）基于密度的异常点检测" class="headerlink" title="（5）基于密度的异常点检测"></a>（5）基于密度的异常点检测</h4><p>考察当前点的周围密度，可以发现局部异常点，例如LOF算法。</p>
+<h3 id="8、处理不平衡数据"><a href="#8、处理不平衡数据" class="headerlink" title="8、处理不平衡数据"></a>8、处理不平衡数据</h3><blockquote>
+<p>另外一篇（参考如下）<br><a href="%5B%E4%B8%8D%E5%B9%B3%E8%A1%A1%E6%95%B0%E6%8D%AE%E9%9B%86%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95-CSDN%E5%8D%9A%E5%AE%A2%5D(https://blog.csdn.net/asialee_bird/article/details/83714612)">不平衡数据集介绍和处理方法</a></p>
+</blockquote>
+<h2 id="三、特征工程——特征选择"><a href="#三、特征工程——特征选择" class="headerlink" title="三、特征工程——特征选择"></a>三、特征工程——特征选择</h2><h3 id="1、过滤法选择特征（Filter）"><a href="#1、过滤法选择特征（Filter）" class="headerlink" title="1、过滤法选择特征（Filter）"></a>1、过滤法选择特征（Filter）</h3><p>它按照特征的发散性或者相关性指标对各个特征进行评分，设定评分阈值或者待选择阈值的个数，选择合适的特征。</p>
+<h4 id="（1）方差筛选法"><a href="#（1）方差筛选法" class="headerlink" title="（1）方差筛选法"></a>（1）方差筛选法</h4><p>使用方差选择法，先要计算各个特征的方差，然后根据阈值，选择方差大于阈值的特征。（方差越大的特征，那么我们可以认为它是比较有用的。如果方差较小，比如小于1，那么这个特征可能对我们的算法作用没有那么大。最极端的，如果某个特征方差为0，即所有的样本该特征的取值都是一样的，那么它对我们的模型训练没有任何作用，可以直接舍弃。在实际应用中，我们会指定一个方差的阈值，当方差小于这个阈值的特征会被我们筛掉。)</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> skearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> VarianceThreshold</code></pre>
+
+<h4 id="（2）相关系数"><a href="#（2）相关系数" class="headerlink" title="（2）相关系数"></a>（2）相关系数</h4><p>这个主要用于输出连续值的监督学习算法中。我们分别计算所有训练集中各个特征与输出值之间的相关系数，设定一个阈值，选择相关系数较大的部分特征。即使用相关系数法，先要计算各个特征对目标值的相关系数以及相关系数的P值。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectKBest
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> pearsonr</code></pre>
+
+<h4 id="（3）假设检验法（卡方检验、F检验、t检验）"><a href="#（3）假设检验法（卡方检验、F检验、t检验）" class="headerlink" title="（3）假设检验法（卡方检验、F检验、t检验）"></a>（3）假设检验法（卡方检验、F检验、t检验）</h4><p>卡方检验可以检验某个特征分布和输出值分布之间的相关性。</p>
+<p>经典的卡方检验是检验定性自变量对定性因变量的相关性。假设自变量有N种取值，因变量有M种取值，考虑自变量等于i且因变量等于j的样本频数的观察值与期望的差距。</p>
+<p>我们还可以使用F检验和t检验，它们都是使用假设检验的方法，只是使用的统计分布不是卡方分布，而是F分布和t分布而已。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectKBest
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> chi2</code></pre>
+
+<h4 id="（4）互信息"><a href="#（4）互信息" class="headerlink" title="（4）互信息"></a>（4）互信息</h4><p>即从信息熵的角度分析各个特征和输出值之间的关系评分。在决策树算法中我们讲到过互信息（信息增益）。互信息值越大，说明该特征和输出值之间的相关性越大。</p>
+<p>经典的互信息也是评价定性自变量对定性因变量的相关性。</p>
+<p>[熵与信息增益算法详解](<a target="_blank" rel="noopener" href="https://blog.csdn.net/asialee_bird/article/details/81084783">决策树算法熵与信息增益（Python3实现）_信息增益比最大的特征 python实现-CSDN博客</a>)</p>
+<h3 id="2、包装法选择特征（Wrapper）"><a href="#2、包装法选择特征（Wrapper）" class="headerlink" title="2、包装法选择特征（Wrapper）"></a>2、包装法选择特征（Wrapper）</h3><p>根据目标函数，通常是预测效果评分，每次选择部分特征，或者排除部分特征。</p>
+<h4 id="1-递归消除特征算法（Recursive-feature-elimination-algorithm）"><a href="#1-递归消除特征算法（Recursive-feature-elimination-algorithm）" class="headerlink" title="(1)递归消除特征算法（Recursive feature elimination algorithm）"></a>(1)递归消除特征算法（Recursive feature elimination algorithm）</h4><p>递归消除特征法使用一个机器学习模型来进行多轮训练，每轮训练后，消除若干权值系数的对应的特征，再基于新的特征集进行下一轮训练。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> RFE
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression</code></pre>
+
+<h3 id="3、嵌入法选择特征（Embedded）"><a href="#3、嵌入法选择特征（Embedded）" class="headerlink" title="3、嵌入法选择特征（Embedded）"></a>3、嵌入法选择特征（Embedded）</h3><p>先使用某些机器学习的算法和模型进行训练，得到各个特征的权值系数，根据权值系数从大到小来选择特征。（类似于Filter方法，但是是通过训练来确定特征的优劣。）</p>
+<h4 id="1-基于惩罚项的特征选择法"><a href="#1-基于惩罚项的特征选择法" class="headerlink" title="(1)基于惩罚项的特征选择法"></a>(1)基于惩罚项的特征选择法</h4><p>使用带惩罚项的基模型，除了筛选出特征外，同时也进行了降维。<br>最常用的是使用L1正则化和L2正则化来选择特征。正则化惩罚项越大，那么模型的系数就会越小。当正则化惩罚项大到一定的程度的时候，部分特征系数会变成0，当正则化惩罚项继续增大到一定程度时，所有的特征系数都会趋于0. 但是我们会发现一部分特征系数会更容易先变成0，这部分系数就是可以筛掉的。也就是说，我们选择特征系数较大的特征。常用的L1正则化和L2正则化来选择特征的基学习器是逻辑回归。（L1惩罚项降维的原理在于保留多个对目标值具有同等相关性的特征中的一个，所以没选到的特征不代表不重要。故，可结合L2惩罚项来优化。具体操作为：若一个特征在L1中的权值为1，选择在L2中权值差别不大且在L1中权值为0的特征构成同类集合，将这一集合中的特征平分L1中的权值，故需要构建一个新的逻辑回归模型）</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectFromModel
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression</code></pre>
+
+<h4 id="2-基于树模型的特征选择法"><a href="#2-基于树模型的特征选择法" class="headerlink" title="(2)基于树模型的特征选择法"></a>(2)基于树模型的特征选择法</h4><p>可以使用决策树或者GBDT。一般来说，可以得到特征系数coef或者可以得到特征重要度(feature importances)的算法才可以做为嵌入法的基学习器。<br>树模型中GBDT也可用来作为基模型进行特征选择，使用feature_selection库的SelectFromModel类结合GBDT模型。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_selection <span class="token keyword">import</span> SelectFromModel
+<span class="token keyword">from</span> slearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> GradientBoostingClassifier</code></pre>
+
+<h3 id="4、寻找高级特征（特征构造）"><a href="#4、寻找高级特征（特征构造）" class="headerlink" title="4、寻找高级特征（特征构造）"></a>4、寻找高级特征（特征构造）</h3><p>在数据挖掘的过程中，为了提取更有用的信息，挖掘更深层次的模式，提高挖掘结果的精度，我们需要利用已有的特征集构造出新的特征，并加入到现有的特征集合中。（即我们从业务特征中自己去寻找高级数据特征）</p>
+<p>在Kaggle之类的算法竞赛中，高分团队主要使用的方法除了集成学习算法，剩下的主要就是在高级特征上面做文章。所以寻找高级特征是模型优化的必要步骤之一。当然，在第一次建立模型的时候，我们可以先不寻找高级特征，得到基准模型后，再寻找高级特征进行优化。（比如有车的路程特征和时间间隔特征，我们就可以得到车的平均速度这个二级特征。根据车的速度特征，我们就可以得到车的加速度这个三级特征等）</p>
+<p>寻找高级特征最常用的方法有：若干项特征加和，若干项特征之差，若干项特征乘积，若干项特征除商。</p>
+<p>寻找高级特征它是根据业务和模型需要而得，而不是随便的两两组合形成高级特征，这样容易导致特征爆炸，反而没有办法得到较好的模型。</p>
+<p>一般而言，<strong>聚类的时候高级特征尽量少一点，分类回归的时候高级特征适度的多一点。</strong></p>
+<h2 id="四、特征工程——降维"><a href="#四、特征工程——降维" class="headerlink" title="四、特征工程——降维"></a>四、特征工程——降维</h2><p>当特征选择完成后，可以直接训练模型了，但是可能由于特征矩阵过大，导致计算量大，训练时间长的问题，因此降低特征矩阵维度也是必不可少的。常见的降维方法除了以上提到的基于L1惩罚项的模型以外，另外还有主成分分析法（PCA）和线性判别分析（LDA），线性判别分析本身也是一个分类模型。PCA和LDA有很多的相似点，其本质是要将原始的样本映射到维度更低的样本空间中，但是PCA和LDA的映射目标不一样：*<em>PCA是为了让映射后的样本具有最大的发散性；而LDA是为了让映射后的样本有最好的分类性能。*<em>所以说PCA是一种</em>无监督*的降维方法，而LDA是一种</em>有监督*的降维方法。</p>
+<h3 id="1、主成分分析法（PCA）"><a href="#1、主成分分析法（PCA）" class="headerlink" title="1、主成分分析法（PCA）"></a>1、主成分分析法（PCA）</h3><pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>decomposition <span class="token keyword">import</span> PCA
+<span class="token triple-quoted-string string">"""PCA主成分分析"""</span>
+<span class="token keyword">def</span> <span class="token function">pca</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token triple-quoted-string string">"""
+PCA:
+本质：PCA是一种分析、简化数据集的技术
+目的：是数据维数压缩，尽可能降低原数据的维数（复杂度），损失少量信息。
+作用：可以消减回归分析或聚类分析中特征的数量
+语法:
+PCA(n_components=None)
+将数据分解为较为低维空间
+PCA.fit=transform(X)
+X: numpy array 格式的数据[n_samples,n_features]
+返回值: 转换后的指定维度的array
+Returns:None
+"""</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>decomposition <span class="token keyword">import</span> PCA
+p <span class="token operator">=</span> PCA<span class="token punctuation">(</span>n_components<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">)</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+data <span class="token operator">=</span> p<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span></code></pre>
+
+<h3 id="2、线性判别分析法（LDA）"><a href="#2、线性判别分析法（LDA）" class="headerlink" title="2、线性判别分析法（LDA）"></a>2、线性判别分析法（LDA）</h3><pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>lda <span class="token keyword">import</span> LDA</code></pre>
+
+<h3 id="3、奇异值分解（SVD）-文本降维"><a href="#3、奇异值分解（SVD）-文本降维" class="headerlink" title="3、奇异值分解（SVD）-文本降维"></a>3、奇异值分解（SVD）-文本降维</h3><p>在对文本数据进行向量化以后，由于是稀疏矩阵太稀疏，同样可以使用降维技术，这里使用的是奇异值分解。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>decomposition <span class="token keyword">import</span> TruncatedSVD</code></pre>
+
+<blockquote>
+<p>注：降维技术不是特征选择，降维是把高维数据的特征映射到低维空间中，而特征选择是在高维空间中直接剔除部分特征，选出重要特征。</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhen666wua</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhen666wuawua.github.io/2024/07/10/MLBasis/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/">https://zhen666wuawua.github.io/2024/07/10/MLBasis/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhen666wua</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/machinelearning/">
+                                    <span class="chip bg-color">machinelearning</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的鼓励是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/07/11/MLBasis/Pose-detection%E6%A8%A1%E5%9E%8B%E4%B9%8BBlazePose/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Pose detection模型之BlazePose">
+                        
+                        <span class="card-title">Pose detection模型之BlazePose</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/machinelearning/" class="post-category">
+                                    machinelearning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/machinelearning/">
+                        <span class="chip bg-color">machinelearning</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/07/03/ProjectWorking/origin%E5%AF%BC%E5%87%BA%E5%9B%BE%E7%89%87%E5%88%B0%E5%85%B6%E4%BB%96%E4%BD%9C%E5%9B%BE%E8%BD%AF%E4%BB%B6%E6%8F%90%E7%A4%BA%E6%9C%AA%E7%9F%A5%E9%94%99%E8%AF%AF/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="origin导出图片到其他作图软件提示未知错误">
+                        
+                        <span class="card-title">origin导出图片到其他作图软件提示未知错误</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%94%BB%E5%9B%BE/" class="post-category">
+                                    画图
+                                </a>
+                            
+                            <a href="/categories/%E7%94%BB%E5%9B%BE/Origin/" class="post-category">
+                                    Origin
+                                </a>
+                            
+                            <a href="/categories/%E7%94%BB%E5%9B%BE/Origin/Adobe-Illustrator/" class="post-category">
+                                    Adobe Illustrator
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%94%BB%E5%9B%BE/">
+                        <span class="chip bg-color">画图</span>
+                    </a>
+                    
+                    <a href="/tags/Origin/">
+                        <span class="chip bg-color">Origin</span>
+                    </a>
+                    
+                    <a href="/tags/Adobe-Illustrator/">
+                        <span class="chip bg-color">Adobe Illustrator</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zhen666wua<br />'
+            + '文章作者: zhen666wua<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2025</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">zhen666wua</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhen666wuawua" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:18810671399@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1142840239" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1142840239" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/medias/logo.png" class="tooltipped" target="_blank" data-tooltip="添加我的微信: 18810671399" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
