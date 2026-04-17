@@ -1,0 +1,1393 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="01脑电基本概念和原理, zhen666wua">
+    <meta name="description" content="zhen666wua">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>01脑电基本概念和原理 | zhen666wua</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">zhen666wua</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/AutoHeavy" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>自动降重工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">zhen666wua</div>
+        <div class="logo-desc">
+            
+            zhen666wua
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/AutoHeavy" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			自动降重工具
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhen666wuawua" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Star Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhen666wuawua" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Star Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">01脑电基本概念和原理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/EEG%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">EEG基础</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/EEG%E5%9F%BA%E7%A1%80/" class="post-category">
+                                EEG基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-01-26
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="第一课时：脑电基本原理和成分"><a href="#第一课时：脑电基本原理和成分" class="headerlink" title="第一课时：脑电基本原理和成分"></a>第一课时：脑电基本原理和成分</h3><h4 id="一、脑电基本概念和原理"><a href="#一、脑电基本概念和原理" class="headerlink" title="一、脑电基本概念和原理"></a>一、脑电基本概念和原理</h4><h5 id="EEG-Electroencephalography"><a href="#EEG-Electroencephalography" class="headerlink" title="EEG: Electroencephalography"></a>EEG: Electroencephalography</h5><p><strong>脑电&#x2F;脑电图（EEG）</strong> 是一种记录大脑电活动的技术。它通过在头皮上放置电极来检测神经元群体的电信号。这些信号反映了大脑不同区域的活动状态，能够提供有关认知功能、情绪状态和神经疾病的信息。脑神经细胞的电生理活动载大脑皮层或头皮表面的总体反映。</p>
+<blockquote>
+<p>Electro: relating to electricity<br>Encephalo: relating to the brain<br>Graphy: writing or represnetation produced in a specified manner</p>
+</blockquote>
+<h5 id="ERP-Event-Related-Potential"><a href="#ERP-Event-Related-Potential" class="headerlink" title="ERP: Event-Related Potential"></a>ERP: Event-Related Potential</h5><p>认知过程中脑电活动的时间锁定变化，称为事件相关电位（ERP），也被称为认知电位。ERP是通过对多个试次的脑电信号进行平均得到的，能够反映大脑对特定刺激或任务的反应。ERP成分通常以其极性（正向或负向）和潜伏期（出现时间）来命名，如N100、P300等。</p>
+<h5 id="动作电位-action-potential-AP-和突触后电位-postsynaptic-potential-PSP"><a href="#动作电位-action-potential-AP-和突触后电位-postsynaptic-potential-PSP" class="headerlink" title="动作电位 action potential (AP) 和突触后电位 postsynaptic potential (PSP)"></a>动作电位 action potential (AP) 和突触后电位 postsynaptic potential (PSP)</h5><blockquote>
+<p>动作电位</p>
+<ol>
+<li>放电频率高</li>
+<li>传递过程连续放电，持续1ms</li>
+<li>幅值大，单位mV毫伏</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>突触后电位</p>
+<ol>
+<li>放电频率低</li>
+<li>传递过程不连续，可以叠加，持续几十到几百ms</li>
+<li>幅值小，单位μV微伏</li>
+</ol>
+</blockquote>
+<p><strong>脑电记录的一般是突触后电位（PSP）</strong>，因为它们在时间上更长且更容易被检测到。记录到的脑电信号是<strong>大量神经元群体的突触后电位的总和（local field potential, LFP）</strong>，这些神经元在同一时间内同步活动。</p>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img1.png" alt="动作电位和突触后电位 " style="width: 70%; max-width: 800px;">
+ </div>
+
+<p><strong>脑电产生要求：</strong></p>
+<ol>
+<li>距离近: 神经元群体距离电极较近，通常在几毫米范围内。<em>大脑深处核团放电记录不到</em>。</li>
+<li>大量细胞： 需要有大量神经元同时放电，通常至少需要成千上万的神经元同步活动，才能产生足够强的电信号被头皮电极检测到。<em>神经元数量少放电记录不到</em>。</li>
+<li>同步放电： 神经元群体需要在时间上同步放电，这样它们的电信号才能叠加，形成可检测的脑电信号。<em>这个先放电，那个后放电记录不到</em>。</li>
+</ol>
+<p><strong>容积传导（volume conduction）</strong><br>脑电信号通过脑组织、颅骨和头皮传导到电极，这个过程称为容积传导。由于不同组织的电导率不同，脑电信号在传导过程中会发生电活动衰减和扩散（空间分辨率降低，space smearing effect）。因此，记录到的脑电信号是原始神经元活动的一个近似反映。表现为：<strong>相邻电极点记录到的信号具有较高的相关性（correlation）</strong>。因此，<strong>建议脑电电极点间距不宜过近，一般建议至少2-3cm以上</strong>。</p>
+<p><strong>前向问题vs反向问题</strong></p>
+<ol>
+<li>前向问题（Forward Problem）：已知神经元活动，预测头皮上电极记录到的脑电信号。这涉及到建模脑组织的电导特性和几何结构。</li>
+<li>反向问题（Inverse Problem）：已知头皮上电极记录到的脑电信号，推断神经元活动的位置和性质。反向问题通常是一个不适定问题，因为多个神经元活动模式可能产生相似的脑电信号。</li>
+</ol>
+<p><strong>不同深度的脑电记录</strong><br><strong>EEG：</strong> <strong>突触后电位</strong>，记录大脑皮层表面的电活动，空间分辨率较低，通常在厘米级别。适用于研究大脑整体活动模式和大规模神经网络的功能连接。<br><strong>ECoG</strong>（Electroencephalography，皮层脑电图）：通过在大脑皮层&#x2F;硬脑膜表面放置电极记录电活动，空间分辨率较高，通常在毫米级别。 适用于研究局部神经活动和高频振荡。<br><strong>LFP</strong>（Local Field Potential，局部场电位）：通过在大脑组织内部插入微电极记录电活动，空间分辨率最高，通常在微米级别。适用于研究单个神经元群体的活动和突触传递机制。<br><strong>MUR&#x2F;MUAP</strong>（Multi-Unit Activity，多单元活动）：<strong>动作电位</strong>，通过在大脑组织内部插入微电极记录多个神经元的放电活动，空间分辨率最高，通常在微米级别。适用于研究单个神经元的放电模式和神经编码机制。</p>
+<h4 id="二、脑电设备、实验设计和操作要点"><a href="#二、脑电设备、实验设计和操作要点" class="headerlink" title="二、脑电设备、实验设计和操作要点"></a>二、脑电设备、实验设计和操作要点</h4> <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img2.png" alt="脑电采集设备 " style="width: 80%; max-width: 800px;">
+ </div>
+
+<blockquote>
+<p>脑电采集设备必须符合数据的特点：</p>
+<ol>
+<li>采样率高：至少500Hz，以捕捉快速变化的脑电信号。</li>
+<li>放大：把脑电信号方大到可测量范围内，通常需要放大1000-10000倍。</li>
+<li>抗干扰：去除高频噪声和低频漂移，常用滤波器包括高通滤波器（cut-off frequency 0.1-1Hz）和低通滤波器（cut-off frequency 30-100Hz）。 </li>
+<li>数字化：把生物电信号转化为数字和图像信号，便于存储和分析。</li>
+</ol>
+</blockquote>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img4.png" alt="脑电电设备特点 " style="width: 80%; max-width: 800px;">
+ </div>
+
+<p><strong>电极的命名和放置</strong></p>
+<ul>
+<li>10-20系统电极放置法是国际脑电图学会规定的标准电极放置法。额极中点至鼻根的距离和枕点至枕外粗隆的距离各占此连线全长的10%，其余各点均以此连线全长的20%相隔。</li>
+<li>常用64导，128导电极帽。</li>
+</ul>
+<p><strong>电极类型</strong></p>
+<ul>
+<li>湿电极：凝胶（麻烦），科研最常规，盐水（至多1小时，液体容易流动），特殊被试、儿童、老年人；</li>
+<li>干电极：阻抗大，数据差，伪迹多，但使用方便，适合临床和便携式设备。</li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img5.png" alt="脑电电极 " style="width: 40%; max-width: 800px;">
+ </div>
+
+<p><strong>电极帽</strong><br>根据头围选择合适尺寸的电极帽，确保电极与头皮良好接触，减少阻抗。</p>
+<ul>
+<li>新生儿：34-40cm</li>
+<li>婴幼儿：42-48cm</li>
+<li>儿童或小号：48-54cm</li>
+<li>中号：54-62cm</li>
+<li>大号：62-68cm</li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img3.png" alt="电极名称 " style="width: 80%; max-width: 800px;">
+ </div>
+
+<p><strong>脑电：活动电极-参考电极&#x3D;记录信号</strong></p>
+<ul>
+<li>活动电极(A)：放在指定头皮位置；</li>
+<li>参考电极(R)：放在电活动较少的位置，如耳垂、乳突等；</li>
+<li>地电极(G)：放在头皮上或身体上某一适宜位置，用于减少电源干扰。</li>
+<li>活动电极和接地电极的电压：A-G;</li>
+<li>参考电极和接地电极的电压：R-G;</li>
+<li>记录信号：[A-G] - [R-G] &#x3D; A-R;</li>
+<li><strong>差动放大器：放大差模信号，抑制共模信号。共模抑制比(CMRR)：衡量差动放大器抑制共模信号的能力，CMRR越大，抑制效果越好。大于70dB，一般100dB以上。</strong></li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img6.png" alt="脑电信号记录 " style="width: 45%; max-width: 800px;">
+ </div>
+
+<p><strong>参考点</strong></p>
+<ul>
+<li>在线参考：1.不同设备不一样；2.一般是信号比较好的中央电极点。</li>
+<li>离线参考：1.双侧耳垂或双侧乳突；2.平均参考（Average Reference）：所有电极点的平均值作为参考点，适用于高密度电极阵列。3.鼻尖参考。</li>
+</ul>
+<h3 id="ERP-vs-fMRI"><a href="#ERP-vs-fMRI" class="headerlink" title="ERP vs fMRI"></a>ERP vs fMRI</h3><ul>
+<li><strong>ERP：</strong> 像一个非常高精度的高速麦克风，能捕捉大脑在毫秒级发生的“电信号声音事件”，但很难精确定位是哪个“乐器”（脑区）发出的。</li>
+<li><strong>fMRI：</strong> 像一个非常精确的慢速热成像相机，能绘制出大脑各个区域的“活动热量图”，定位精确到毫米，但每拍一张照片需要几秒钟，会错过快速变化的细节。</li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img7.png" alt="经典设备参数 " style="width: 80%; max-width: 800px;">
+ </div>
+
+<p><strong>原理与测量内容：</strong></p>
+<ul>
+<li>ERP：当大量神经元（尤其是皮层锥体细胞）同步放电时，会在头皮产生微弱的电位变化。ERP通过多次试验叠加平均，从脑电图（EEG）中提取出与特定认知事件（如看到单词、听到声音）锁时的电位波形。它的信号是<strong>直接的神经电活动</strong>。</li>
+<li>fMRI：它不直接测量神经活动，而是测量神经活动引发的“血氧反应”。活跃的脑区需要更多氧气，导致局部血液中氧合血红蛋白与脱氧血红蛋白比例变化，而这两种物质具有不同的磁性。fMRI就捕捉这种磁性的变化（BOLD信号）。它的信号是<strong>间接的、代谢性的</strong>，且有约2-6秒的血液动力学延迟。</li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img8.png" alt="ERP vs fMRI" style="width: 60%; max-width: 800px;">
+ </div>
+
+<p><strong>ERP赢在时间，输在空间：</strong><br>电信号以光速传播，因此ERP可以精确到<strong>毫秒级别</strong>追踪认知加工的各个阶段（如P100视觉早期加工，N400语义违反，P300决策更新）。<br>但是，头皮的电信号是经过颅骨、脑脊液等层层“模糊”后的总和。从头皮有限的电极点（如64、128个）反推大脑内部的电流源，是一个数学上的“逆问题”，有无数种可能解，因此<strong>空间定位非常不精确</strong>。<br><strong>fMRI赢在空间，输在时间：</strong><br>它能清晰地将大脑划分为成千上万个体素，并提供毫米级的3D激活图，精确告诉你哪个脑区（如梭状回、前额叶背外侧）被激活了。<br>但它的BOLD信号变化非常慢（持续数秒），就像一个慢速快门。你无法知道在一个持续2秒的“激活”中，脑区的活动是如何在毫秒尺度上动态变化的。它捕获的是一个<strong>时间上的“积分”或“平均”</strong>。</p>
+<p><strong>应用场景的互补性：</strong></p>
+<ul>
+<li>用 ERP 研究：语言加工的时间阶段（句法vs.语义）、注意瞬脱、错误相关负波、意识访问的神经标志、快速决策过程。</li>
+<li>用 fMRI 研究：脑功能图谱绘制、大脑网络连接、情绪与奖赏的脑机制、脑疾病（如抑郁症、阿尔茨海默病）的异常脑区或网络。</li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img9.png" alt="ERP vs fMRI" style="width: 80%; max-width: 800px;">
+ </div>
+
+<h3 id="fMRI-vs-fNIRS"><a href="#fMRI-vs-fNIRS" class="headerlink" title="fMRI vs fNIRS"></a>fMRI vs fNIRS</h3><p>都是基于神经血管耦合（血氧变化）原理的非侵入性脑成像技术。</p>
+<ul>
+<li><strong>fMRI：<strong>像一个</strong>高精度、高分辨率的天文望远镜</strong>，能给你极其清晰、深邃的宇宙（大脑）图像，但它非常昂贵、笨重，而且只能在天文台（实验室）里使用，观测速度较慢。</li>
+<li><strong>fNIRS：<strong>像一个</strong>便捷的手持式夜视仪</strong>，虽然分辨率没那么高，视野也较浅，但它轻便、便宜、抗干扰，可以让你在自然环境下（比如人走动、交谈时）进行观测。</li>
+</ul>
+<p><strong>原理：</strong></p>
+<ul>
+<li>fMRI：利用强大的超导磁场和射频脉冲，探测血液中<strong>氧合血红蛋白和脱氧血红蛋白磁性差异</strong>引起的信号变化。它对磁场变化极其敏感，因此能提供毫米级的空间细节。</li>
+<li>fNIRS：利用<em>近红外光（650-900nm）</em> 对生物组织的良好穿透性，以及血红蛋白对特定波长光的吸收特性。通过测量<strong>入射光与反射&#x2F;透射光的强度差</strong>，计算氧合血红蛋白和脱氧血红蛋白的浓度变化。它本质上是一种“光学”方法。</li>
+</ul>
+<p><strong>空间性能：</strong></p>
+<ul>
+<li>fMRI 是<strong>3D全脑成像</strong>的金标准。它可以清晰地分辨皮层沟回，并深入到大脑内部，对研究情绪（杏仁核）、记忆（海马体）、奖赏（纹状体）等关键区域不可或缺。</li>
+<li>fNIRS 是<strong>2D表面成像</strong>。光在组织中散射严重，有效探测深度有限。它主要研究大脑皮层的功能，例如运动皮层、前额叶、语言区等。它无法研究深层脑区。</li>
+</ul>
+<p><strong>时间性能：</strong></p>
+<ul>
+<li>fMRI的BOLD信号有<strong>固有的血液动力学延迟（约2-6秒）</strong>，且扫描整个大脑最快也需1-2秒。这使得它难以捕捉快速的神经动态。</li>
+<li>fNIRS同样基于血流变化，因此也有血液动力学延迟。但它的<strong>光学采样率可以很高（如10Hz以上）</strong>，能更密集地记录血氧信号的连续变化轨迹，对研究血氧信号的细微时间特征略有优势。</li>
+</ul>
+<p><strong>应用场景：</strong></p>
+<ul>
+<li><p>选择 fMRI 的场景：<br>需要精确定位激活的具体脑区或网络。<br>研究涉及皮层下结构的功能。<br>需要高分辨率的全脑连接图谱。<br>被试可以忍受严格的实验环境（如躺着一动不动）。</p>
+</li>
+<li><p>选择 fNIRS 的场景：<br>研究自然情境下的认知与社会互动（如面对面交谈、合作、教学）。<br>研究运动中的大脑（如康复训练、运动学习、舞蹈、步行）。<br>研究特殊人群（婴幼儿、老年人、有幽闭恐惧症或体内有金属的患者）。<br>长期、反复的监测（如临床康复评估、课堂学习研究）。<br>资源有限的实验室或临床机构。</p>
+</li>
+</ul>
+ <div style="text-align: center;">
+   <img src="/images/Learning/fig1/img10.png" alt="fMRI vs fNIRS" style="width: 80%; max-width: 800px;">
+ </div>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhen666wua</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhen666wuawua.github.io/2026/01/26/Learning/01%E8%84%91%E7%94%B5%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%8E%9F%E7%90%86/">https://zhen666wuawua.github.io/2026/01/26/Learning/01%E8%84%91%E7%94%B5%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%8E%9F%E7%90%86/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhen666wua</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/EEG%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">EEG基础</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的鼓励是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2026/01/29/Learning/02%E8%84%91%E7%94%B5%E7%BB%8F%E5%85%B8%E6%88%90%E5%88%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/114.jpg" class="responsive-img" alt="02脑电经典成分">
+                        
+                        <span class="card-title">02脑电经典成分</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-01-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/EEG%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    EEG基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/EEG%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">EEG基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/01/13/PapersReading/NeuroBridge%20EEG%20to%20Image%20Decoding/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="NeuroBridge BioInspired Self Supervised EEG to Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment">
+                        
+                        <span class="card-title">NeuroBridge BioInspired Self Supervised EEG to Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-01-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/deep-learning-papers/" class="post-category">
+                                    deep learning papers
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/5/">
+                        <span class="chip bg-color">5</span>
+                    </a>
+                    
+                    <a href="/tags/deep-learning-conference/">
+                        <span class="chip bg-color">deep learning conference</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zhen666wua<br />'
+            + '文章作者: zhen666wua<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">zhen666wua</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhen666wuawua" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:18810671399@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1142840239" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1142840239" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/medias/logo.png" class="tooltipped" target="_blank" data-tooltip="添加我的微信: 18810671399" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
