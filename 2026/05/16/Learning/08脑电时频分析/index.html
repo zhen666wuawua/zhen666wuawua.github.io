@@ -502,11 +502,78 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="脑电数据时频分析"><a href="#脑电数据时频分析" class="headerlink" title="脑电数据时频分析"></a>脑电数据时频分析</h2><h3 id="一、ERP时域分析"><a href="#一、ERP时域分析" class="headerlink" title="一、ERP时域分析"></a>一、ERP时域分析</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><div style="text-align: center;">
-   <img src="/images/Learning/fig1/img71.png" alt="img" style="width: 80%; max-width: 800px;">
+                <h2 id="脑电数据时频分析"><a href="#脑电数据时频分析" class="headerlink" title="脑电数据时频分析"></a>脑电数据时频分析</h2><h3 id="一、预处理"><a href="#一、预处理" class="headerlink" title="一、预处理"></a>一、预处理</h3><div style="text-align: left;">
+   <img src="/images/Learning/fig1/img72.png" alt="img" style="width: 60%; max-width: 800px;">
 </div>
 
-<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4>
+<div style="text-align: left;">
+   <img src="/images/Learning/fig1/img71.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<div style="text-align: left;">
+   <img src="/images/Learning/fig1/img73.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<div style="text-align: left;">
+   <img src="/images/Learning/fig1/img74.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<div style="text-align: left;">
+   <img src="/images/Learning/fig1/img75.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<h3 id="二、ERP时域分析"><a href="#二、ERP时域分析" class="headerlink" title="二、ERP时域分析"></a>二、ERP时域分析</h3><h4 id="看数据的思路一（沿时间）："><a href="#看数据的思路一（沿时间）：" class="headerlink" title="看数据的思路一（沿时间）："></a>看数据的思路一（沿时间）：</h4><ol>
+<li><p>确定某个通道，看波形图，找到在某个时间窗的成分；确定某个时间窗，看地形图，找到这个成分在哪个电极点上最明显。</p>
+</li>
+<li><p>选定一个通道，沿着时间看波形图</p>
+</li>
+</ol>
+<pre class="language-none"><code class="language-none">mean_data &#x3D; squeeze(mean(ERPdata(:, chan_No, :), 1));</code></pre>
+
+<h4 id="看数据的思路二（沿空间）："><a href="#看数据的思路二（沿空间）：" class="headerlink" title="看数据的思路二（沿空间）："></a>看数据的思路二（沿空间）：</h4><ol>
+<li>确定某个时间窗（<strong>50-100 ms</strong>为佳），沿着通道看地形图，找到这个成分在哪个电极点上最明显。<br>为什么要选择时间窗？<br>因为认为平均波幅更有说服力，单点的峰值可能会受到噪声的影响。</li>
+</ol>
+<pre class="language-none"><code class="language-none">P2 amplitude &#x3D; squeeze(mean(ERPdata(:, :, P2_interval), 3));</code></pre>
+
+<ol start="2">
+<li>选定peak点，从组水平的波形图上选取。</li>
+</ol>
+<div style="text-align: left;">
+   <img src="/images/Learning/fig1/img76.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<ul>
+<li>topoplot画地形图</li>
+</ul>
+<h4 id="看数据的思路三（空间随时间的变化）："><a href="#看数据的思路三（空间随时间的变化）：" class="headerlink" title="看数据的思路三（空间随时间的变化）："></a>看数据的思路三（空间随时间的变化）：</h4><div style="text-align: left;">
+   <img src="/images/Learning/fig1/img77.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<div style="text-align: center;">
+   <img src="/images/Learning/fig1/img78.png" alt="img" style="width: 50%; max-width: 800px;">
+</div>
+
+<div style="text-align: center;">
+   <img src="/images/Learning/fig1/img79.png" alt="img" style="width: 50%; max-width: 800px;">
+</div>
+
+<blockquote>
+<p>两张图结合来看，可以看出来随着时间的推移，先到达极负值点，后到达极正值点。</p>
+</blockquote>
+<h4 id="提取分段（不同的实验条件）"><a href="#提取分段（不同的实验条件）" class="headerlink" title="提取分段（不同的实验条件）"></a>提取分段（不同的实验条件）</h4><div style="text-align: left;">
+   <img src="/images/Learning/fig1/img80.png" alt="img" style="width: 100%; max-width: 800px;">
+</div>
+
+<div style="text-align: center;">
+   <img src="/images/Learning/fig1/img81.png" alt="img" style="width: 60%; max-width: 800px;">
+</div>
+
+<p>再画上差异波：</p>
+<div style="text-align: center;">
+   <img src="/images/Learning/fig1/img82.png" alt="img" style="width: 60%; max-width: 800px;">
+</div>
+
+
                 
             </div>
             <hr/>
@@ -741,18 +808,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/05/16/Learning/08%E8%84%91%E7%94%B5%E6%97%B6%E9%A2%91%E5%88%86%E6%9E%90/">
+                <a href="/2026/06/01/PapersReading/Brain-inspired%20gaze-guided%20neuro-video%20fusion%20object%20detection/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/88.jpg" class="responsive-img" alt="08脑电时频分析">
+                        <img src="/medias/featureimages/51.jpg" class="responsive-img" alt="Brain-inspired gaze-guided neuro-video cross-modal deep fusion for object detection in degraded videos">
                         
-                        <span class="card-title">08脑电时频分析</span>
+                        <span class="card-title">Brain-inspired gaze-guided neuro-video cross-modal deep fusion for object detection in degraded videos</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -762,27 +828,38 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2026-05-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2026-06-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/EEG%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    EEG基础
+                            <a href="/categories/deep-learning-papers/" class="post-category">
+                                    deep learning papers
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/EEG%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">EEG基础</span>
+                    <a href="/tags/EEG-Image/">
+                        <span class="chip bg-color">EEG-Image</span>
+                    </a>
+                    
+                    <a href="/tags/eye-movement/">
+                        <span class="chip bg-color">eye movement</span>
+                    </a>
+                    
+                    <a href="/tags/multi-class-classification/">
+                        <span class="chip bg-color">multi-class classification</span>
+                    </a>
+                    
+                    <a href="/tags/object-detection/">
+                        <span class="chip bg-color">object detection</span>
                     </a>
                     
                 </div>
