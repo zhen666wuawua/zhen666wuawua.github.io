@@ -1,0 +1,1400 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Adaptive Modality Balanced Online Knowledge Distillation for Brain-Eye-Computer-Based Dim Object Detection, zhen666wua">
+    <meta name="description" content="zhen666wua">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Adaptive Modality Balanced Online Knowledge Distillation for Brain-Eye-Computer-Based Dim Object Detection | zhen666wua</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">zhen666wua</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/AutoHeavy" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>自动降重工具</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">zhen666wua</div>
+        <div class="logo-desc">
+            
+            zhen666wua
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/AutoHeavy" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			自动降重工具
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhen666wuawua" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Star Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhen666wuawua" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Star Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/62.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Adaptive Modality Balanced Online Knowledge Distillation for Brain-Eye-Computer-Based Dim Object Detection</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/EEG-Image/">
+                                <span class="chip bg-color">EEG-Image</span>
+                            </a>
+                        
+                            <a href="/tags/eye-movement/">
+                                <span class="chip bg-color">eye movement</span>
+                            </a>
+                        
+                            <a href="/tags/adaptive-modality/">
+                                <span class="chip bg-color">adaptive modality</span>
+                            </a>
+                        
+                            <a href="/tags/dim-object-detection/">
+                                <span class="chip bg-color">dim object detection</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/deep-learning-papers/" class="post-category">
+                                deep learning papers
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-06-30
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="No-13"><a href="#No-13" class="headerlink" title="No.13"></a>No.13</h3><h3 id="标签："><a href="#标签：" class="headerlink" title="标签："></a>标签：</h3><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>《Adaptive Modality Balanced Online Knowledge Distillation for Brain-Eye-Computer-Based Dim Object Detection》<br>期刊：<strong>IEEE TRANSACTIONS ON NEURAL NETWORKS AND LEARNING SYSTEMS</strong><br>年份：2025<br>分区：Q1，一区Top；IF：9.7<br>作者：Zixing Li, Chao Yan, Member, IEEE, Zhen Lan, Xiaojia Xiang, Han Zhou, Jun Lai, and Dengqing Tang<br>主要单位：College of Intelligence Science and Technology, National University of Defense Technology</p>
+<ul>
+<li>脑-眼-计算机协同目标检测：针对航空图像中的弱小目标检测，先用 RPN (Region Proposal Network) 找候选区域，再让被试通过眼动引导的慢速视觉呈现范式观察候选区域，采集 EEG + 眼动 + 图像配对数据，最后用一种自适应模态平衡的在线知识蒸馏方法 AMBOKD 融合 EEG 和图像特征，提高少样本条件下的目标识别性能。</li>
+</ul>
+<h3 id="一、研究背景与问题定位"><a href="#一、研究背景与问题定位" class="headerlink" title="一、研究背景与问题定位"></a>一、研究背景与问题定位</h3><h4 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h4><ul>
+<li>航空图像里的目标往往很小、很暗、背景复杂、视角变化大，而且在军事侦察、灾害救援这类场景中，训练样本很少，所以纯 CV 方法容易漏检或误检。</li>
+<li>另一方面，纯 EEG 方法虽然能利用人的认知能力，比如 ERP&#x2F;P300 对目标的反应，但 EEG 噪声大、个体差异大，单独用 EEG 准确率不够。</li>
+</ul>
+<h4 id="2-问题定位"><a href="#2-问题定位" class="headerlink" title="2. 问题定位"></a>2. 问题定位</h4><ul>
+<li><strong>如何在少样本航空弱小目标检测场景中，把机器视觉的特征提取能力和人的视觉认知能力结合起来？</strong></li>
+</ul>
+<h3 id="二、文章解读"><a href="#二、文章解读" class="headerlink" title="二、文章解读"></a>二、文章解读</h3><h4 id="1-RPN-ESSVP-EEG-眼动配对流程"><a href="#1-RPN-ESSVP-EEG-眼动配对流程" class="headerlink" title="1. RPN + ESSVP + EEG&#x2F;眼动配对流程"></a>1. RPN + ESSVP + EEG&#x2F;眼动配对流程</h4><p>第一步，计算机先用 ResNet-50 + RPN 在航空图像中生成候选区域，也就是 suspicious region。<br>RPN anchor 的尺度是 16、32、48、64、80，长宽比是 0.5、0.75、1.0、1.5、2.0。</p>
+<p>第二步，把带有候选区域的图像通过 ESSVP 范式呈现给被试。<br>ESSVP 是 Eye-tracking-based Slow Serial Visual Presentation，可以理解为“眼动辅助的慢速 RSVP”。<br><strong>它不是快速闪图，而是每张图显示 3–4 秒，让被试有时间搜索弱小目标。</strong></p>
+<p>第三步，用眼动仪记录被试看哪里。如果被试看某个候选框超过 0.3 s，就记录这个候选框和对应图像，同时发送 fixation trigger 给 EEG 系统，截取对应时间段的脑电。这样就能构造 EEG–image paired data。</p>
+<p>第四步，把候选图像 patch 和对应 EEG 输入 AMBOKD 模型，判断该候选区域是不是目标。<br>最后再根据眼动数据把目标位置映射回原图，实现目标检测。</p>
+<p>所以它所谓的 object detection，本质上是：<br><strong>候选框生成 + 脑眼图像多模态候选区域分类 + 位置回映射</strong>。</p>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img1.png" alt="架构" style="width: 70%; max-width: 800px;">
+</div>
+
+<h4 id="2-ESSVP范式具体设计"><a href="#2-ESSVP范式具体设计" class="headerlink" title="2. ESSVP范式具体设计"></a>2. ESSVP范式具体设计</h4><p>正式实验中，每个被试看 16 个序列，每个序列 50 张图像。序列分成两个 session。<br>每个 session 前 6 个序列是简单场景里的玩具模型，比如装甲车、飞机，每张图 3 s；<br>后 2 个序列是真实复杂场景，每张图 4 s。前 6 个序列目标是装甲模型，后 2 个序列目标是车辆。</p>
+<p>目标出现概率设到了 40%，并在连续目标之间随机插入 1–2 张非目标图像，避免连续目标造成 attentional blink。<br>每个候选区域要求被试至少注视 0.5 s。</p>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img2.png" alt="架构" style="width: 100%; max-width: 800px;">
+</div>
+
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img3.png" alt="架构" style="width: 70%; max-width: 800px;">
+</div>
+
+<h4 id="3-数据集和预处理"><a href="#3-数据集和预处理" class="headerlink" title="3. 数据集和预处理"></a>3. 数据集和预处理</h4><p>采集了 10 名被试，6 男 4 女，22–26 岁，右利手，正常或矫正视力。<br>EEG 采样率 1000 Hz，64 个湿电极，10–20 系统，阻抗低于 10 kΩ。</p>
+<p>最终数据集包含 13,405 个样本，其中 3,880 个正样本，9,525 个负样本，目标比例 28.9%。</p>
+<ul>
+<li>EEG 实际使用 59 个通道，5 个冗余电极去掉。预处理是 2–30 Hz 带通滤波，1000 Hz 降采样到 250 Hz，以 trigger 为基准截取 −500 到 700 ms，共 1.2 s，前 200 ms 做 baseline correction。</li>
+<li>图像 patch 最小 150×150，统一 resize 到 224×224。验证集里还人为加入 Gaussian noise 和 salt-and-pepper noise 来模拟实际噪声。</li>
+</ul>
+<p>因此模型输入是：<br>EEG：59 × 300<br>Image：3 × 224 × 224</p>
+<h4 id="4-AMBOKD-模型"><a href="#4-AMBOKD-模型" class="headerlink" title="4. AMBOKD 模型"></a>4. AMBOKD 模型</h4><p>AMBOKD 可以拆成四个部分：</p>
+<ol>
+<li><p>第一，<strong>图像编码器</strong>。<br>作者用 EfficientNet-B0 做 visual encoder，并用 ImageNet 预训练参数初始化。它主要输出视觉特征。</p>
+</li>
+<li><p>第二，<strong>EEG 编码器</strong>。<br>作者用 MCGRAM 做 EEG encoder。MCGRAM 是他们前作里的 EEG 网络，包括频率编码、空间图卷积、时间 LSTM + self-attention，用来提取 EEG 的频谱、空间和时间特征。</p>
+</li>
+<li><p>第三，<strong>多头注意力融合</strong>。<br>EEG 特征和图像特征先通过全连接层对齐到相同维度，然后 concat，再用 multi-head self-attention 学习 EEG 和 image 之间的重要性关系，得到 fusion feature。作者把这个 fusion branch 当作第三个“模态”。</p>
+</li>
+<li><p>第四，<strong>在线知识蒸馏 + 自适应模态平衡</strong>。<br>这是文章真正的方法创新。它不是简单 concat 后分类，而是让 Image branch、EEG branch、Fusion branch 三个分支<strong>互相学习</strong>。每个分支轮流当 student，另外两个分支当 teacher，loss 包括 CE loss 和 KD loss。</p>
+</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img4.png" alt="架构" style="width: 100%; max-width: 800px;">
+</div>
+
+<p>它的关键想法是：</p>
+<ul>
+<li><strong>图像模态、EEG 模态、融合模态的学习速度不一样</strong>。<br>图像通常收敛快，EEG 噪声大、收敛慢。如果不控制，强模态会主导训练，弱模态学不好。<br>因此要动态调节各模态的蒸馏权重和梯度更新强度。</li>
+</ul>
+<p>AMB 模块有两个机制：</p>
+<ul>
+<li>一个是 dynamic weights for KD losses，根据 student 和 teacher 的 CE loss 比例动态调节 KD loss 权重 α、β。<br>简单说，哪个 teacher 当前更可靠，它对 student 的蒸馏影响就更大。</li>
+<li>另一个是 dynamic ratios for backward gradients，根据各模态的学习进度动态调节梯度更新比例，避免某个模态过快收敛、另一个模态训练不足。</li>
+</ul>
+<h4 id="5-实验设计"><a href="#5-实验设计" class="headerlink" title="5. 实验设计"></a>5. 实验设计</h4><ol>
+<li>第一类是 ESSVP 自建数据集上的 subject-independent 实验。<br>每一折拿 1 个被试做验证，另外 9 个被试训练，相当于 leave-one-subject-out，再用 5 个随机种子求平均。<br>指标包括 AUC、ACC、F1、Precision。由于正负样本不平衡，作者强调 AUC 是主指标。</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img5.png" alt="架构" style="width: 100%; max-width: 800px;">
+</div>
+
+<ol start="2">
+<li>第二类是 CIFAR-100 实验，用来证明 AMBOKD 不只适用于 EEG-image，也能用于通用知识蒸馏。</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img6.png" alt="架构" style="width: 50%; max-width: 800px;">
+</div>
+
+<ol start="3">
+<li>第三类是 SEED-VIG 多模态疲劳驾驶数据集，用 EEG + EOG 做验证，说明方法有一定跨任务泛化性。</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img7.png" alt="架构" style="width: 50%; max-width: 800px;">
+</div>
+
+<ol start="4">
+<li>第四类是消融实验，逐步去掉 multi-head attention、KD、online mutual learning、dynamic KD weights、dynamic gradient modulation 等模块。</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img8.png" alt="架构" style="width: 50%; max-width: 800px;">
+</div>
+
+<ol start="5">
+<li>第五类是从简单场景到复杂场景的迁移实验，用 30 个真实场景样本微调，然后在真实复杂场景测试。</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img9.png" alt="架构" style="width: 50%; max-width: 800px;">
+</div>
+
+<ol start="6">
+<li>第六类是 physical verification，也就是实际系统验证。被试坐在电脑前，一边执行 ESSVP，一边模拟 AAV 地面站监控任务。</li>
+</ol>
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img10.png" alt="架构" style="width: 50%; max-width: 800px;">
+</div>
+
+<div style="text-align: center;">
+  <img src="/images/PapersReading/13/img11.png" alt="架构" style="width: 50%; max-width: 800px;">
+</div>
+
+<h4 id="6-文章贡献"><a href="#6-文章贡献" class="headerlink" title="6. 文章贡献"></a>6. 文章贡献</h4><ol>
+<li><p>第一，系统贡献。它不是只做算法，而是搭了一个脑-眼-计算机闭环式弱小目标检测系统：RPN 候选区域、ESSVP 呈现、眼动定位、EEG 认知反应、融合模型识别。</p>
+</li>
+<li><p>第二，数据贡献。他们构建并公开了一个 ESSVP 数据集，包含航空图像、眼动定位和 EEG-image 配对数据。这对脑机视觉融合方向是有价值的。</p>
+</li>
+<li><p>第三，训练方法贡献。AMBOKD 的重点是解决多模态训练不平衡：图像强、EEG 弱；图像快、EEG 慢；融合分支容易被强模态主导。所以它用在线知识蒸馏让三个分支互学，再用自适应权重和动态梯度平衡学习过程。</p>
+</li>
+</ol>
+<h4 id="7-局限性"><a href="#7-局限性" class="headerlink" title="7. 局限性"></a>7. 局限性</h4><ol>
+<li><p>第一个问题：它叫 object detection，但模型核心其实是 candidate-level recognition。<br>真正的定位主要靠 RPN 和眼动回映射，AMBOKD 本身是在判断候选区域是不是目标。严格讲，它不是端到端目标检测器。</p>
+</li>
+<li><p>第二个问题：ESSVP 太慢。<br>物理验证中总耗时 245.37 s，其中 ESSVP 就占 240 s。对“无人机实时侦察”来说，这个实时性显然不够。<br>作者自己也在 conclusion 里承认目前系统是 offline setting，未来要做 real-time online system。</p>
+</li>
+<li><p>第三个问题：被试数量少且同质化。<br>只有 10 个大学生，年龄 22–26 岁。虽然做了 subject-independent，但泛化到真实操作者、疲劳状态、不同经验人群，还不好说。</p>
+</li>
+<li><p>第四个问题：任务设计可能有一定范式依赖。<br>被试提前知道目标类型，并且每个候选区域注视 0.5 s，眼动 trigger 又参与样本构造。<br>这种情况下，<strong>EEG 反映的是“主动搜索和确认目标”的脑反应，不完全等价于无意识快速视觉注意</strong>。</p>
+</li>
+<li><p>第五个问题：纯 CV baseline 在物理验证里表现太差，可能让脑-眼-计算机系统优势显得更大。<br>Table VI 里纯计算机 AP@50:95 只有 23.44%，这是因为只有 30 个真实样本微调，确实少样本。但如果换更强的 few-shot detector 或 foundation model，差距可能会缩小。</p>
+</li>
+<li><p>第六个问题：多模态蒸馏方法比较复杂，但生理解释不够强。<br>AMBOKD 主要是工程训练策略，虽然用了 EEG，但它没有深入分析 ERP 波形、时空脑区贡献、眼动行为和 EEG 的对应关系。<br>对脑机接口论文来说，生理机制部分偏弱。</p>
+</li>
+</ol>
+<h4 id="8-启发"><a href="#8-启发" class="headerlink" title="8. 启发"></a>8. 启发</h4><p><strong>“模态不平衡”</strong> 问题值得写进论文。<br>EEG-image fusion 中不同模态可靠性和收敛速度不同，简单 concat 或固定权重容易导致强模态主导。这可以支持你设计 contrastive alignment、auxiliary loss 或 modality-balanced fusion。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhen666wua</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhen666wuawua.github.io/2026/06/30/PapersReading/13AdaptiveModalityKnowledgeDistillationBrainEyeComputerDimObjectDetection/">https://zhen666wuawua.github.io/2026/06/30/PapersReading/13AdaptiveModalityKnowledgeDistillationBrainEyeComputerDimObjectDetection/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhen666wua</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/EEG-Image/">
+                                    <span class="chip bg-color">EEG-Image</span>
+                                </a>
+                            
+                                <a href="/tags/eye-movement/">
+                                    <span class="chip bg-color">eye movement</span>
+                                </a>
+                            
+                                <a href="/tags/adaptive-modality/">
+                                    <span class="chip bg-color">adaptive modality</span>
+                                </a>
+                            
+                                <a href="/tags/dim-object-detection/">
+                                    <span class="chip bg-color">dim object detection</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的鼓励是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2026/06/30/PapersReading/13AdaptiveModalityKnowledgeDistillationBrainEyeComputerDimObjectDetection/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/62.jpg" class="responsive-img" alt="Adaptive Modality Balanced Online Knowledge Distillation for Brain-Eye-Computer-Based Dim Object Detection">
+                        
+                        <span class="card-title">Adaptive Modality Balanced Online Knowledge Distillation for Brain-Eye-Computer-Based Dim Object Detection</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/deep-learning-papers/" class="post-category">
+                                    deep learning papers
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/EEG-Image/">
+                        <span class="chip bg-color">EEG-Image</span>
+                    </a>
+                    
+                    <a href="/tags/eye-movement/">
+                        <span class="chip bg-color">eye movement</span>
+                    </a>
+                    
+                    <a href="/tags/adaptive-modality/">
+                        <span class="chip bg-color">adaptive modality</span>
+                    </a>
+                    
+                    <a href="/tags/dim-object-detection/">
+                        <span class="chip bg-color">dim object detection</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/06/30/Learning/09%E8%84%91%E7%94%B5%E5%8A%9F%E8%83%BD%E8%BF%9E%E6%8E%A5%E5%88%86%E6%9E%90/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/51.jpg" class="responsive-img" alt="09脑电功能连接分析">
+                        
+                        <span class="card-title">09脑电功能连接分析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-06-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/EEG%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    EEG基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/EEG%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">EEG基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zhen666wua<br />'
+            + '文章作者: zhen666wua<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2026</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">zhen666wua</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhen666wuawua" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:18810671399@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1142840239" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1142840239" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/medias/logo.png" class="tooltipped" target="_blank" data-tooltip="添加我的微信: 18810671399" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
